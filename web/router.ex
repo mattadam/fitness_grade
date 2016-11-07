@@ -20,7 +20,9 @@ defmodule FitnessGrade.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", FitnessGrade do
-  #   pipe_through :api
-  # end
+  scope "/api", FitnessGrade do
+    pipe_through :api
+
+    resources "/weights", WeightController, except: [:new, :edit]
+  end
 end
