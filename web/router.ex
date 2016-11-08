@@ -19,6 +19,14 @@ defmodule FitnessGrade.Router do
     get "/", PageController, :index
   end
 
+  scope "/auth", OAuth2Example do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :index
+    get "/:provider/callback", AuthController, :callback
+    delete "/logout", AuthController, :delete
+  end
+  
   # Other scopes may use custom stacks.
   scope "/api", FitnessGrade do
     pipe_through :api

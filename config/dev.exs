@@ -26,6 +26,10 @@ config :fitness_grade, FitnessGrade.Endpoint,
     ]
   ]
 
+config :plug,
+  fitbit_client_id: "227XNY",
+  fitbit_client_secret: "3a0bf3af9a7c90d6dc3d8f9e71fd5070"
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
@@ -33,6 +37,7 @@ config :logger, :console, format: "[$level] $message\n"
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
+config :oauth2, debug: true
 # Configure your database
 config :fitness_grade, FitnessGrade.Repo,
   adapter: Ecto.Adapters.Postgres,

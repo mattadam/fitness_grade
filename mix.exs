@@ -18,7 +18,7 @@ defmodule FitnessGrade.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {FitnessGrade, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :poison, :oauth2, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end
 
@@ -37,6 +37,8 @@ defmodule FitnessGrade.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
+     {:oauth2, "~> 0.8"},
+     {:poison, "~> 2.0"},
      {:cowboy, "~> 1.0"}]
   end
 
